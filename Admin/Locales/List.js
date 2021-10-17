@@ -1,5 +1,9 @@
 import { List, Text, ItemAction, app, post } from '@List';
 
+const headers = <>
+    <th>Key</th>
+</>
+
 const row = (item) => {
     return <>
         <td>{item.key}</td>
@@ -8,8 +12,9 @@ const row = (item) => {
 
 const Locales = () => {
     return <List
-        title="Locales"
+        title="Locales 6"
         entity='locale'
+        headers={headers}
         row={row}
     />
 }
