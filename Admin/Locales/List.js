@@ -16,7 +16,7 @@ const row = (item) => {
                 //title={item.isActive ? 'Yes, click to deactivate' : 'No, click to activate'}
                 column='isActive'
                 value={item.isActive}
-                action={`/locale/toggleIsActive?${item.id}`}
+                action={`/locale/toggleIsActive/${item.id}`}
             />
         </td>
         <td>{item.country}</td>
