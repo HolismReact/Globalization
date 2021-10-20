@@ -1,5 +1,5 @@
 import { List, Text as FilterText, Select as FilterSelect, ItemAction, ListAction, app } from '@List'
-import { Form, Text, Select } from '@Form';
+import { Form, Text, Lookup } from '@Form';
 
 const inputs = <>
     <Text
@@ -8,9 +8,18 @@ const inputs = <>
         required='Please provide text key'
         regex='[a-zA-Z]+'
     />
-    {/* <Select
+    <Lookup
         column='LocaleId'
-    /> */}
+        entity='locale'
+        placeholder='Locale'
+        required='Please select the locale'
+        display={(item) => item.localKey}
+    />
+    <Text
+        column='Value'
+        placeholder='Translation'
+        required='Please translate your text'
+    />
 </>
 
 const CreateTranslation = () => {
