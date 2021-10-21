@@ -34,7 +34,11 @@ const Locales = () => {
                         ((index !== locales.length - 1) ? "mb-2" : "")
                     }
                     onClick={() => {
-                        document.cookie = 'culture=' + locale.key;
+                        let now = new Date();
+                        now.setMonth(now.getMonth() + 12);
+                        let host = document.location.host.split('.').reverse().splice(0, 2).reverse().join('.');
+                        document.cookie = "locale=" + locale.key + ";expires=" + now
+                            + ";domain=." + host;
                         document.location.reload();
                     }}
                 >
