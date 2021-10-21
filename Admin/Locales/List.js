@@ -3,6 +3,7 @@ import { List, Text, ItemAction, Boolean, app, post } from '@List';
 const headers = <>
     <th>Key</th>
     <th>Local Key</th>
+    <th>Is RTL</th>
     <th>Is Active</th>
     <th>Country</th>
 </>
@@ -11,6 +12,12 @@ const row = (item) => {
     return <>
         <td>{item.key}</td>
         <td>{item.localKey}</td>
+        <td>
+            <Boolean
+                column='isActive'
+                value={item.isRtl}
+            />
+        </td>
         <td>
             <Boolean
                 //title={item.isActive ? 'Yes, click to deactivate' : 'No, click to activate'}
