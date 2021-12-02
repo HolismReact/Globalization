@@ -1,4 +1,4 @@
-import { List, Text, ItemAction, Boolean, app, post } from '@List';
+import { List, Text, ItemAction, BooleanProperty, app, post } from '@List';
 
 const headers = <>
     <th>Key</th>
@@ -13,13 +13,13 @@ const row = (item) => {
         <td>{item.key}</td>
         <td>{item.localKey}</td>
         <td>
-            <Boolean
+            <BooleanProperty
                 column='isActive'
                 value={item.isRtl}
             />
         </td>
         <td>
-            <Boolean
+            <BooleanProperty
                 //title={item.isActive ? 'Yes, click to deactivate' : 'No, click to activate'}
                 column='isActive'
                 value={item.isActive}
