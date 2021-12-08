@@ -1,7 +1,7 @@
 import { HeaderAction, get, app } from '@Panel';
 import { useState, useEffect } from 'react';
 import LanguageIcon from '@mui/icons-material/Language';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Locales = () => {
 
