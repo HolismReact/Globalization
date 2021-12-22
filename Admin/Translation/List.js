@@ -10,7 +10,7 @@ const inputs = <>
     />
     <Lookup
         column='LocaleId'
-        entity='locale'
+        entityType='locale'
         placeholder='Locale'
         required='Please select the locale'
         display={(item) => item.localKey}
@@ -24,7 +24,7 @@ const inputs = <>
 
 const CreateTranslation = () => {
     return <Form
-        entity='translation'
+        entityType='translation'
         inputs={inputs}
     />
 }
@@ -56,7 +56,7 @@ const row = (item) => {
 const Translations = () => {
     return <List
         title='Translations'
-        entity='translation'
+        entityType='translation'
         filters={filters}
         headers={headers}
         row={row}

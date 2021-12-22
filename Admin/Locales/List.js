@@ -33,7 +33,7 @@ const row = (item) => {
 const Locales = () => {
     return <List
         title="Locales"
-        entity='locale'
+        entityType='locale'
         headers={headers}
         row={row}
     />
