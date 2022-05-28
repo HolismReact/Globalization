@@ -1,24 +1,24 @@
-import { HeaderAction, get, app } from '@Panel';
-import { useState, useEffect } from 'react';
-import LanguageIcon from '@mui/icons-material/Language';
-import CircularProgress from '@mui/material/CircularProgress';
+import { HeaderAction, get, app } from '@Panel'
+import { useState, useEffect } from 'react'
+import LanguageIcon from '@mui/icons-material/Language'
+import CircularProgress from '@mui/material/CircularProgress'
 
 const Locales = () => {
 
-    const [locales, setLocales] = useState([]);
-    const [progress, setProgress] = useState(false);
+    const [locales, setLocales] = useState([])
+    const [progress, setProgress] = useState(false)
 
     useEffect(() => {
-        setProgress(true);
+        setProgress(true)
         get('/locale/actives')
             .then(data => {
-                setProgress(false);
-                setLocales(data);
+                setProgress(false)
+                setLocales(data)
             }, error => {
-                setProgress(false);
-                app.error(error);
+                setProgress(false)
+                app.error(error)
             })
-    }, []);
+    }, [])
 
     return <div className="rounded-md border w-56 flex flex-col justify-center items-center bg-white py-4">
 
@@ -34,11 +34,11 @@ const Locales = () => {
                         ((index !== locales.length - 1) ? "mb-2" : "")
                     }
                     onClick={() => {
-                        let now = new Date();
-                        now.setMonth(now.getMonth() + 12);
-                        let host = document.location.host.split('.').reverse().splice(0, 2).reverse().join('.');
-                        localStorage.setItem('locale', locale.key);
-                        document.location.reload();
+                        let now = new Date()
+                        now.setMonth(now.getMonth() + 12)
+                        let host = document.location.host.split('.').reverse().splice(0, 2).reverse().join('.')
+                        localStorage.setItem('locale', locale.key)
+                        document.location.reload()
                     }}
                 >
                     {locale.localKey}
@@ -56,4 +56,4 @@ const ChooseLocale = () => {
     />
 }
 
-export default ChooseLocale;
+export default ChooseLocale

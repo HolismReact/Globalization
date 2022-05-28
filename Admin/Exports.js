@@ -1,6 +1,7 @@
 import TranslateIcon from '@mui/icons-material/Translate';
 import Locales from './Locale/List'
 import Translations from './Translation/List'
+import ChooseLocale from './Locale/Choose';
 
 const GlobalizationRoutes = [
     {
@@ -34,3 +35,4 @@ export { GlobalizationRoutes }
 export { GlobalizationMenu }
 export { Locales }
 export { Translations }
+export { ChooseLocale }
